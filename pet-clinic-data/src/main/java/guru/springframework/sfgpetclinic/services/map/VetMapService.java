@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.Set;
 
 @Service
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
+public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
         return super.findAll();
@@ -22,7 +22,7 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
 
     private final SpecialityService specialityService;
 
-    public VetServiceMap(SpecialityService specialityService) {
+    public VetMapService(SpecialityService specialityService) {
         this.specialityService = specialityService;
     }
 
