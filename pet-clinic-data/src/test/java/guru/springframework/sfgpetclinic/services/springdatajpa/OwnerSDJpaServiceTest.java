@@ -43,10 +43,13 @@ class OwnerSDJpaServiceTest {
 
     @Test
     void findByLastName() {
-        Owner returnOwner = Owner.builder().id(1L).lastName(LAST_NAME).build();
+        // Arrange
         when(ownerRepository.findByLastName(any())).thenReturn(returnOwner);
+
+        // Act
         Owner smith = service.findByLastName(LAST_NAME);
 
+        // Assert
         assertEquals(LAST_NAME, smith.getLastName());
         verify(ownerRepository).findByLastName(any());
     }
